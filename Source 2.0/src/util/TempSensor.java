@@ -47,21 +47,21 @@ public class TempSensor extends TimerTask{
     public void actionBackground(){
         if(!this.done) this.updateName();
         this.updateTemp();
-        ((Ventana) ventana).updateCPU(this.temCPU);
-        ((Ventana) ventana).updateGPU(this.temGPU);
-        if(((Dispositivos) this.dispositivos).isDevConnected())
-            ((Dispositivos) this.dispositivos).send(this.temCPU+"-"+this.temGPU);
+        //((Ventana) ventana).updateCPU(this.temCPU);
+        //((Ventana) ventana).updateGPU(this.temGPU);
+        //if(((Dispositivos) this.dispositivos).isDevConnected())
+        //    ((Dispositivos) this.dispositivos).send(this.temCPU+"-"+this.temGPU);
         this.trayIcon.setToolTip("CPU:"+this.temCPU+", GPU:"+this.temGPU);
     }
     
     public void updateName(){
         List<Cpu> cpus = JSensors.get.components().cpus;
         List<Gpu> gpus = JSensors.get.components().gpus;
-        if(cpus != null && cpus.size() > 0)
+        /*if(cpus != null && cpus.size() > 0)
             ((Ventana) ventana).updateCPUName(cpus.get(0).name);
         if(gpus != null && gpus.size() > 0)
             ((Ventana) ventana).updateGPUName(gpus.get(0).name);
-        this.done = true; 
+        this.done = true; */
     }
         
     public void updateTemp() {
